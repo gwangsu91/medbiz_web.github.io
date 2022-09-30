@@ -1,0 +1,52 @@
+/* Global */
+:root {
+    --text-color: white;
+    --background-color: #97B754;
+    --accent-color: #7D9F34;
+}
+
+*{ box-sizing: border-box;}
+
+html { font-size: 20px;}
+body { font-size: 1rem; margin:0; font-family: 'Noto Sans KR', sans-serif;}
+
+a{ text-decoration: none; color:var(--text-color);}
+
+/* 상단 header */
+.medbiz { display: flex; justify-content: space-between; align-items: flex-start; background-color: var(--background-color); border-radius:0px 0px .5rem .5rem; padding: .6rem .8rem; margin:0px 1.5rem 0px 1.5rem;}
+
+
+/* 로고 */
+.medbiz div h1 { float: left;}
+
+/* 네비바 메뉴 */
+ul, ol, li { list-style:none; margin:0; padding:0; }
+.medbiz_menu { display: flex; list-style: none;  padding-left:2rem; color:var(--text-color) }
+.medbiz_menu > li { display:inline-block; width:6rem; padding : 0.5rem 0.7rem; font-size: .7rem;  text-align:center; position:relative; }
+.medbiz_menu > li:hover { background:var(--accent-color); }
+.medbiz_menu > li ul.submenu { display:none; position:absolute; top:1.5rem; left:0; }
+.medbiz_menu > li:hover ul.submenu { display:block; background-color: var(--accent-color); border: .5rem; }
+.medbiz_menu > li ul.submenu > li { display:inline-block; width:6rem; padding:0.5rem 0.5rem; background:var(--accent-color); text-align:center; }
+.medbiz_menu > li ul.submenu > li:hover { background:var(--accent-color); }
+
+
+
+
+/* 회원가입, 로그인 */
+.spot { margin-top: 1rem; list-style: none; color:var(--text-color); display:flex; top:0; right:1.4rem; white-space: nowrap; }
+.spot li { padding: .4rem .6rem; font-size:.7rem }
+
+/* 햄버거 */
+.medbiz_toggleBtn { display: none; position:absolute; right:3rem; font-size:1.4rem; color:var(--text-color);} 
+
+
+/* 반응형 페이지 */
+@media screen and (max-width: 38.4rem) { 
+    .medbiz { flex-direction: column; align-items: flex-start; padding : .4rem 1.2rem; }
+    .medbiz_menu { display: none; flex-direction: column; align-items: center; width: 100%; }
+    .medbiz_menu li { width: 100%; text-align: center; }
+    .medbiz_menu li a  { display:block; }
+    .spot  { display: none; justify-content: center; width: 100%; }
+    .medbiz_toggleBtn { display: block; }
+    .medbiz_menu.active, .spot.active { display: flex; }
+}
